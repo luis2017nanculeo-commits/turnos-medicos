@@ -228,6 +228,7 @@ app.use((req: Request, res: Response) => {
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://127.0.0.1:${PORT}`)
 })
