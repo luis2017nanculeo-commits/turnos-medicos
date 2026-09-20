@@ -1,6 +1,6 @@
 # Turnos-Médicos
 
-Backend para la gestión de turnos médicos. Proyecto en TypeScript sobre Node.js, con Express como dependencia preparada para el desarrollo de la API.
+Backend para la gestión de turnos médicos. API REST desarrollada en TypeScript sobre Node.js con Express, que expone endpoints CRUD para especialidades y profesionales médicos.
 
 ## Requisitos
 
@@ -26,15 +26,52 @@ npm install
 ```
 Turnos-Medicos/
 ├── src/
+│   ├── Controller/
+│   │   ├── general.controller.ts        # Hello World y manejo de 404
+│   │   ├── Especialidades.controller.ts # CRUD de especialidades
+│   │   └── Profesionales.controller.ts  # CRUD de profesionales
 │   ├── data/
 │   │   ├── especialidades.json   # Listado de especialidades médicas
 │   │   └── profesionales.json    # Listado de profesionales
 │   ├── resources.ts              # Carga de datos JSON y configuración de agenda
-│   └── index.ts                  # Punto de entrada, imprime datos en consola
+│   └── index.ts                  # Punto de entrada, define rutas Express
 ├── tsconfig.json
 ├── package.json
 └── README.md
 ```
+
+## Endpoints disponibles
+
+El servidor corre por defecto en `http://127.0.0.1:3000` (variable `PORT` opcional).
+
+### General
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET    | `/`  | Mensaje de bienvenida del servidor |
+
+### Especialidades
+
+| Método | Ruta                  | Descripción                                              |
+|--------|-----------------------|-----------------------------------------------------------|
+| GET    | `/especialidades`     | Lista las especialidades activas                          |
+| GET    | `/especialidades/:id` | Busca una especialidad por `especialidadId`               |
+| POST   | `/especialidades`     | Crea una especialidad. Body: `{ nombreEspecialidad, activa }` |
+| DELETE | `/especialidades/:id` | Desactiva (soft delete) una especialidad (`activa = false`) |
+
+> Nota: `Especialidades.controller.ts` aún no implementa `PUT` para modificar una especialidad existente.
+
+### Profesionales
+
+| Método | Ruta                | Descripción                                                        |
+|--------|---------------------|----------------------------------------------------------------------|
+| GET    | `/profesionales`     | Lista todos los profesionales                                        |
+| GET    | `/profesionales/:id` | Busca un profesional por `profesionalId`                             |
+| POST   | `/profesionales`     | Crea un profesional. Body: `{ nombre, especialidad, activo }`        |
+| PUT    | `/profesionales/:id` | Modifica un profesional existente. Body: `{ nombre, especialidad, activo }` |
+| DELETE | `/profesionales/:id` | Desactiva (soft delete) un profesional (`activo = false`)            |
+
+Cualquier ruta no definida devuelve `404` con `{ error, ruta, metodo }`.
 
 ## Datos de ejemplo
 
