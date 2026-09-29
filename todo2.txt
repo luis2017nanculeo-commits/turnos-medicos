@@ -1,0 +1,43 @@
+LISTA DE TAREAS
+- crear modelos JSON de pacientes
+- crear modelos JSON de turnos
+- contemplar la interface de parametría que armamos oportunamente
+- definir los endpoints de pacientes
+- definir los endpoints de turnos
+
+POSTMAN
+- crear variable de entorno en la colección correspondiente a TurnosMed
+- asignarle como valor, la URL de pruebas de nuestro proyecto
+- modificar todos los endpoints para que usen la URL
+- Realizar las pruebas de funcionamiento de la variable
+
+DOCUMENTACION
+- crear el archivo pacientes-turnos.md
+- actualizar este archivo con la explicación de las estructuras de datos pacientes, turnos, estado de turnos, y endpoints
+- en el archivo README.md
+    - Agregar el apartado final donde debemos
+        - Descargar el proyecto del repositorio
+        - inicializarlo para instalar las dependencias (con la salvedad de sudo)
+        - comando para poner el proyecto en ejecución en ambiente dev
+        - comando para transpilar el proyecto
+        - comando para poner el proyecto en ejecución en ambiente producción
+
+Pacientes
+- codigo de paciente
+- nombre completo
+- documento o identificador
+- fecha de nacimiento
+- email
+- telefono
+- cobertura de salud
+
+Turnos
+- codigo de turno
+- fecha
+- hora
+- especialidad
+- profesional
+- nombre del paciente
+- estado del turno
+
+Estado de turnos (registrado - validado - presente - en consulta - finalizado - cancelado - no presentado)

@@ -103,6 +103,33 @@ La lógica de negocio, la arquitectura del backend (API con Express, endpoints, 
 
 > **Nota para quien continúe el proyecto**: los datos en `src/data/*.json` son ficticios y fueron generados automáticamente; no representan profesionales ni especialidades reales.
 
+# Pasos para trabajar con este proyecto
+
+1. Descargar el proyecto desde: `https://github.com/luis2017nanculeo-commits/turnos-medicos`
+
+## Inicializar el proyecto
+
+```bash
+npm install
+```
+Mac - Linux
+```bash
+sudo npm install
+```
+## Ejecutar en DEV
+```bash
+npm run dev
+```
+
+## Transpilar el proyecto
+```bash
+npm run build
+```
+## Ejecutar en PROD
+```bash
+npm run prod
+```
+
 ## Autor
 
 Luis Antonio Ñanculeo
